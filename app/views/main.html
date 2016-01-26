@@ -2,10 +2,10 @@
 
 <div>
   <div ng-repeat="a in h" class="row">
-    <div ng-repeat="b in w" 
-      class="col-xs-{{columns}} cell color-{{board.tiles[a][b]}} "
-      ng-class="{'selected-tile': true}">  
-    </div>    
+    <div ng-repeat="b in w"
+      class="col-xs-{{columns}} cell color-{{board.tiles[a][b]}}"
+      ng-class="{'selected-tile': true}">
+    </div>
   </div>
 
   <div ng-show="gameEnd();">
@@ -24,10 +24,10 @@
   <div ng-show="board.pointer === 0 || gameEnd()">
     IMITA ESTO:
     <div ng-repeat="a in h" class="row">
-      <div ng-repeat="b in w" 
+      <div ng-repeat="b in w"
         class="col-xs-{{columns}} color-{{level.tiles[a][b]}} cell"
-        ng-class="{'selected-tile': true}">  
-      </div>    
+        ng-class="{'selected-tile': true}">
+      </div>
     </div>
   </div>
 

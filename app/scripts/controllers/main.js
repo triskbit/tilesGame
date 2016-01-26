@@ -13,7 +13,7 @@ angular.module('tilesApp')
     initBoard();
 
     $scope.colorClick = function (color) {
-      
+
       if($scope.board.pointer < ($scope.board.width * $scope.board.height) ){
 
         var x = Math.floor($scope.board.pointer / $scope.board.width);
@@ -23,7 +23,7 @@ angular.module('tilesApp')
           $scope.board.tiles[x][y] = color;
         }
         else {
-          $scope.board.tiles[x][y] = 100; 
+          $scope.board.tiles[x][y] = 100;
           $scope.board.errors ++;
         }
 
@@ -47,7 +47,8 @@ angular.module('tilesApp')
     };
 
     function initBoard () {
-      $scope.level = levelService.getLevel(1);
+      $scope.level = levelService.getNextLevel(1);
+      console.log($scope.level);
       $scope.board = {
         colors: $scope.level.colors,
         tiles: [],
@@ -62,10 +63,10 @@ angular.module('tilesApp')
       for(var i=0; i < $scope.board.height; i++){
         $scope.board.tiles[i] = [];
         for(var j=0; j < $scope.board.width; j++){
-          $scope.board.tiles[i][j] = 0;          
+          $scope.board.tiles[i][j] = 0;
         }
       }
-      
+
       $scope.columns = 12 / $scope.board.width;
 
       //TODO: fix this ASAP
@@ -78,11 +79,11 @@ angular.module('tilesApp')
       for(i=0; i<$scope.board.height; i++){
         $scope.h[i] = i;
       }
-      
+
 
     }
 
-    function checkColor(x,y,color) {      
+    function checkColor(x,y,color) {
       return $scope.level.tiles[x][y] === color;
     }
 

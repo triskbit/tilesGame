@@ -94,14 +94,14 @@ body {
 
 .line
 {
-  width: 99%; 
+  width: 99%;
   display: block;
   padding-bottom: 5px;
 }
 .cell
 {
-  min-height: 15px;
-  padding: 2px;
+  height: 15px;
+  width: 15px;
 }
 
 .color-0 {
@@ -109,7 +109,7 @@ body {
 }
 
 .color-100 {
-  background-color: red; 
+  background-color: red;
 }
 
 .color-1 {
@@ -130,4 +130,9 @@ body {
 
 .selected-tile {
   border: 2px solid white;
+}
+
+
+.game-board {
+  display: -webkit-box;
 }

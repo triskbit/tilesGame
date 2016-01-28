@@ -1,10 +1,12 @@
 <h1>SUPER JUEGO</h1>
 
 <div>
-  <div ng-repeat="a in h" class="row">
-    <div ng-repeat="b in w"
-      class="col-xs-{{columns}} cell color-{{board.tiles[a][b]}}"
-      ng-class="{'selected-tile': true}">
+  <div class="game-board" style="width: {{board.width * 15}}px;">
+    <div ng-repeat="a in h" class="row">
+      <div ng-repeat="b in w"
+        class="cell color-{{board.tiles[a][b]}}"
+        ng-class="{'selected-tile': true}">
+      </div>
     </div>
   </div>
 
@@ -23,10 +25,12 @@
   <hr></hr>
   <div ng-show="board.pointer === 0 || gameEnd()">
     IMITA ESTO:
-    <div ng-repeat="a in h" class="row">
-      <div ng-repeat="b in w"
-        class="col-xs-{{columns}} color-{{level.tiles[a][b]}} cell"
-        ng-class="{'selected-tile': true}">
+    <div style="width: {{board.width * 15}}px;">
+      <div ng-repeat="a in h" class="row">
+        <div ng-repeat="b in w"
+          class="col-xs-{{columns}} color-{{level.tiles[a][b]}} cell"
+          ng-class="{'selected-tile': true}">
+        </div>
       </div>
     </div>
   </div>
